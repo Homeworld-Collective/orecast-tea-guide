@@ -1,0 +1,42 @@
+site_name: Orecast TEA Guide
+site_url: https://homeworld-collective.github.io/orecast-tea-guide/
+
+theme:
+  name: material
+  palette:
+    primary: black
+
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Introduction: introduction.md
+  - Scope Overview: scope-overview.md
+  - Examples to Try Yourself:
+    - Overview: examples.md
+    - Customize Bioleach: examples/cust_bioleach.md
+    - Adjust Cost Assumptions: examples/cost_assmpt.md
+    - Add a Unit Operation: examples/add_unit_op.md
+    - Add a Sensitivity: examples/add_sensitivity.md
+  - Detailed Walkthrough:
+    - Overview: walkthrough/index.md
+    - Cover Sheet: walkthrough/cover.md
+    - Dashboard: walkthrough/dashboard.md
+    - Process Flow Sheets: walkthrough/process-flow.md
+    - Economic Sheets: walkthrough/economic-sheets.md
+    - Utility Sheets: walkthrough/utility-sheets.md
+  - Troubleshooting: troubleshooting.md
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
