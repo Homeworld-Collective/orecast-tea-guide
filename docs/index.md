@@ -1,6 +1,6 @@
 # Orecast Project: Chalcopyrite TEA Guide
 
-Welcome to our supporting documentation for the Chalcopyrite Heap Leach TEA! This is part of [Homeworld](https://www.homeworld.bio/)'s Orecast project and a collaboration with [Recursion Works] (https://www.recursionworks.com/) (previously Conductor Labs) whose mission is to support lab-to-market commercialization through open-source data & tooling.
+Welcome to our supporting documentation for the Chalcopyrite Heap Leach TEA! This is part of [Homeworld](https://www.homeworld.bio/)'s Orecast project and a collaboration with [Recursion Works](https://www.recursionworks.com/) (previously Conductor Labs) whose mission is to support lab-to-market commercialization through open-source data & tooling.
 
 You can find the model linked [here](https://1drv.ms/x/c/147876eee33501b9/EQPpl4ljGOJMrgbxcQLHN2UB-NKCfIsGOYR3Qath6lANzw?e=WHnI8g).
 
