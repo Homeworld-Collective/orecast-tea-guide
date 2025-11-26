@@ -1,6 +1,6 @@
 # Orecast Project: Chalcopyrite TEA Guide
 
-Welcome to our supporting documentation for the Chalcopyrite Heap Leach TEA, part of [Homeworld](https://www.homeworld.bio/)'s Orecast project and a collaboration with [Conductor Labs](https://www.conductor-labs.com/). 
+Welcome to our supporting documentation for the Chalcopyrite Heap Leach TEA! This is part of [Homeworld](https://www.homeworld.bio/)'s Orecast project and a collaboration with [Recursion Works] (https://www.recursionworks.com/) (previously Conductor Labs) whose mission is to support lab-to-market commercialization through open-source data & tooling.
 
 You can find the model linked [here](https://1drv.ms/x/c/147876eee33501b9/EQPpl4ljGOJMrgbxcQLHN2UB-NKCfIsGOYR3Qath6lANzw?e=WHnI8g).
 
@@ -22,4 +22,4 @@ This guide provides detailed instructions for using the Chalcopyrite Heap Leach 
 For questions or feedback, reach out to:
 
 - Jayme ([jayme@homeworld.bio](mailto:jayme@homeworld.bio)) at Homeworld Collective
-- Jesse ([jesse@conductor-labs.com](mailto:jesse@conductor-labs.com)) at Conductor Labs
+- Jesse ([jesse@recursionworks.com](mailto:jesse@recursionworks.com)) at Recursion Works
