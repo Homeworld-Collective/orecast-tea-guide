@@ -1,0 +1,1680 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://homeworld-collective.github.io/orecast-tea-guide/examples/cost_assmpt/">
+      
+      
+        <link rel="prev" href="../cust_bioleach/">
+      
+      
+        <link rel="next" href="../add_unit_op/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Adjust Cost Assumptions - Orecast TEA Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cost-assumption-analysis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Orecast TEA Guide" class="md-header__button md-logo" aria-label="Orecast TEA Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Orecast TEA Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Adjust Cost Assumptions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Orecast TEA Guide" class="md-nav__button md-logo" aria-label="Orecast TEA Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Orecast TEA Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scope-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples to Try Yourself
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Examples to Try Yourself
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cust_bioleach/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Customize Bioleach
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adjust Cost Assumptions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adjust Cost Assumptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectives-for-this-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objectives for this Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step-by-Step Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-Step Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-the-two-methods-for-changing-cost-assumptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Two Methods for Changing Cost Assumptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-method-1-changing-cost-assumptions-in-the-variable-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Method 1: Changing Cost Assumptions in the "Variable" Tab
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Method 1: Changing Cost Assumptions in the &#34;Variable&#34; Tab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-navigate-to-the-variable-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Navigate to the "variable" sheet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-identify-the-cost-you-want-to-modify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Identify the cost you want to modify
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-research-and-cite-reference-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Research and cite reference values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-handling-multiple-reference-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. Handling multiple reference values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-update-the-dashboard-sensitivity-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E. Update the "Dashboard" sensitivity table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#illustrative-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Illustrative Example:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-method-2-changing-sensitivity-assumptions-in-the-dashboard-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Method 2: Changing Sensitivity Assumptions in the "Dashboard" Tab
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Method 2: Changing Sensitivity Assumptions in the &#34;Dashboard&#34; Tab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-navigate-to-the-dashboard-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Navigate to the "dashboard" sheet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-locate-the-sensitivity-inputs-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Locate the sensitivity inputs section
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-adjust-sensitivity-parameters-using-one-of-these-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Adjust sensitivity parameters using one of these approaches:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-document-your-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. Document your approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-evaluating-the-impact-of-cost-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Evaluating the Impact of Cost Changes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Evaluating the Impact of Cost Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-sensitivity-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Sensitivity Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-tornado-chart-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Tornado Chart Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-interpret-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Interpret Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-exercise-zero-cost-impact-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Exercise: "Zero-Cost" Impact Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Exercise: &#34;Zero-Cost&#34; Impact Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-select-a-key-input-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Select a key input cost
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-set-the-cost-to-zero-in-the-variable-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Set the cost to zero in the "variable" tab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-evaluate-impact-on-unit-economics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Evaluate impact on unit economics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-analyze-the-waterfall-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. Analyze the waterfall chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add_unit_op/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add a Unit Operation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add_sensitivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add a Sensitivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Detailed Walkthrough
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Detailed Walkthrough
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../walkthrough/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../walkthrough/cover/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cover Sheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../walkthrough/dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../walkthrough/process-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Process Flow Sheets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../walkthrough/economic-sheets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economic Sheets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../walkthrough/utility-sheets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Utility Sheets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectives-for-this-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objectives for this Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step-by-Step Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-Step Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-the-two-methods-for-changing-cost-assumptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Two Methods for Changing Cost Assumptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-method-1-changing-cost-assumptions-in-the-variable-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Method 1: Changing Cost Assumptions in the "Variable" Tab
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Method 1: Changing Cost Assumptions in the &#34;Variable&#34; Tab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-navigate-to-the-variable-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Navigate to the "variable" sheet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-identify-the-cost-you-want-to-modify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Identify the cost you want to modify
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-research-and-cite-reference-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Research and cite reference values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-handling-multiple-reference-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. Handling multiple reference values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-update-the-dashboard-sensitivity-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E. Update the "Dashboard" sensitivity table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#illustrative-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Illustrative Example:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-method-2-changing-sensitivity-assumptions-in-the-dashboard-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Method 2: Changing Sensitivity Assumptions in the "Dashboard" Tab
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Method 2: Changing Sensitivity Assumptions in the &#34;Dashboard&#34; Tab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-navigate-to-the-dashboard-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Navigate to the "dashboard" sheet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-locate-the-sensitivity-inputs-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Locate the sensitivity inputs section
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-adjust-sensitivity-parameters-using-one-of-these-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Adjust sensitivity parameters using one of these approaches:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-document-your-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. Document your approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-evaluating-the-impact-of-cost-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Evaluating the Impact of Cost Changes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Evaluating the Impact of Cost Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-sensitivity-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Sensitivity Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-tornado-chart-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Tornado Chart Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-interpret-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Interpret Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-exercise-zero-cost-impact-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Exercise: "Zero-Cost" Impact Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Exercise: &#34;Zero-Cost&#34; Impact Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-select-a-key-input-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Select a key input cost
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-set-the-cost-to-zero-in-the-variable-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Set the cost to zero in the "variable" tab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-evaluate-impact-on-unit-economics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Evaluate impact on unit economics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-analyze-the-waterfall-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. Analyze the waterfall chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cost-assumption-analysis">Cost Assumption Analysis</h1>
+<h2 id="objectives-for-this-example">Objectives for this Example</h2>
+<ul>
+<li>Learn how to modify cost assumptions in a TEA model</li>
+<li>Evaluate the impact of cost changes on project economics</li>
+<li>Understand how to use sensitivity analysis tools to inform decision-making</li>
+</ul>
+<h2 id="background">Background</h2>
+<p>Cost assumptions significantly influence techno-economic analysis results. This example demonstrates how to thoughtfully adjust cost inputs and analyze their impacts on project economics.</p>
+<h2 id="step-by-step-guide">Step-by-Step Guide</h2>
+<h3 id="1-the-two-methods-for-changing-cost-assumptions">1. The Two Methods for Changing Cost Assumptions</h3>
+<p>You can modify cost assumptions in two ways:</p>
+<p><strong>Method 1: Changing values in the "variable" tab</strong></p>
+<ul>
+<li>Setting the values there sets the base case scenario</li>
+<li>Provides space to provide justification &amp; references</li>
+<li>Also space for team commentary</li>
+</ul>
+<details class="example">
+<summary>View Variable Tab Example</summary>
+<p><img alt="Sulfuric Acid Cost Variable Tab" src="../../images/sulfuric_acid_cost.png" /></p>
+</details>
+<p><strong>Method 2: Adjusting sensitivity parameters in the "dashboard" tab</strong></p>
+<ul>
+<li>Modifies the low/medium/high cases for sensitivity analysis</li>
+<li>Helps understand the impact of cost variability</li>
+<li>Can change the baseline and other scenarios</li>
+</ul>
+<details class="example">
+<summary>View Sensitivity Table</summary>
+<p><img alt="Sensitivity Table" src="../../images/sensitivity_table.png" /></p>
+</details>
+<h3 id="2-method-1-changing-cost-assumptions-in-the-variable-tab">2. Method 1: Changing Cost Assumptions in the "Variable" Tab</h3>
+<h4 id="a-navigate-to-the-variable-sheet">A. Navigate to the "variable" sheet</h4>
+<p>This sheet contains all input parameters including costs for reagents, energy, labor, and other operational inputs.</p>
+<h4 id="b-identify-the-cost-you-want-to-modify">B. Identify the cost you want to modify</h4>
+<p>Costs are organized by category (reagents, utilities, labor, etc.), and a couple of examples are included.</p>
+<h4 id="c-research-and-cite-reference-values">C. Research and cite reference values</h4>
+<p>When changing a cost assumption:</p>
+<ol>
+<li>Research reliable sources for cost data:</li>
+<li>Industry reports</li>
+<li>Academic publications</li>
+<li>Vendor quotes</li>
+<li>
+<p>Government databases</p>
+</li>
+<li>
+<p>Document your sources</p>
+<ul>
+<li>This is useful both for your team as well as third parties, investors, partners who want to understand where numbers come from</li>
+</ul>
+</li>
+</ol>
+<h4 id="d-handling-multiple-reference-values">D. Handling multiple reference values</h4>
+<p>When multiple cost references exist for an input:</p>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>When to Use</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Average value</td>
+<td>When references are similar and reliable</td>
+<td>Calculate and use the mean of available values</td>
+</tr>
+<tr>
+<td>Single reference</td>
+<td>When one source is most relevant to your case</td>
+<td>Choose the most applicable data point</td>
+</tr>
+<tr>
+<td>Range in sensitivity</td>
+<td>When significant uncertainty exists</td>
+<td>Use the range in your low/med/high inputs</td>
+</tr>
+</tbody>
+</table>
+<h4 id="e-update-the-dashboard-sensitivity-table">E. Update the "Dashboard" sensitivity table</h4>
+<p>Make sure the 'med' datapoint references the value in the variable sheet, so it properly pulls from the assumption you just set</p>
+<details class="example">
+<summary>View Dashboard Reference Example</summary>
+<p><img alt="Setting Assumptions via Sheet" src="../../images/set_assmpt_via_sheet.png" /></p>
+</details>
+<h4 id="illustrative-example">Illustrative Example:</h4>
+<p>For sulfuric acid cost, you might find:</p>
+<ul>
+<li>Source 1: $0.10/kg (US Gulf Coast, 2022)</li>
+<li>Source 2: $0.13/kg (European average, 2023)</li>
+<li>Source 3: $0.08/kg (Global commodity report, 2021)</li>
+</ul>
+<p>Decision: Use $0.10/kg as base case (Source 1) with $0.08-0.13/kg as sensitivity range.</p>
+<h3 id="3-method-2-changing-sensitivity-assumptions-in-the-dashboard-tab">3. Method 2: Changing Sensitivity Assumptions in the "Dashboard" Tab</h3>
+<h4 id="a-navigate-to-the-dashboard-sheet">A. Navigate to the "dashboard" sheet</h4>
+<p>This sheet contains sensitivity parameters and visualization tools.</p>
+<h4 id="b-locate-the-sensitivity-inputs-section">B. Locate the sensitivity inputs section</h4>
+<p>Find the area where low/medium/high values are defined for key parameters.</p>
+<h4 id="c-adjust-sensitivity-parameters-using-one-of-these-approaches">C. Adjust sensitivity parameters using one of these approaches:</h4>
+<ol>
+<li>
+<p><strong>Manual setting:</strong></p>
+<ul>
+<li>Directly enter specific values based on research</li>
+<li>Example: Set sulfuric acid costs to $0.08/kg (low), $0.10/kg (medium), and $0.13/kg (high)</li>
+</ul>
+</li>
+<li>
+<p><strong>Factor-based adjustment:</strong></p>
+<ul>
+<li>Apply consistent multipliers to the medium (base) case</li>
+<li>Example: Set factors to ±20% → $0.08/kg (low), $0.10/kg (medium), and $0.12/kg (high)</li>
+</ul>
+</li>
+</ol>
+<details class="example">
+<summary>View Sensitivity Table Configuration</summary>
+<p><img alt="Sensitivity Table Configuration" src="../../images/sensitivity_table.png" /></p>
+</details>
+<h4 id="d-document-your-approach">D. Document your approach</h4>
+<p>Add notes explaining your rationale for the sensitivity ranges chosen in the "Dashboard" or "Variable" tab</p>
+<h3 id="4-evaluating-the-impact-of-cost-changes">4. Evaluating the Impact of Cost Changes</h3>
+<p>After modifying cost assumptions, evaluate the impact on project economics:</p>
+<h4 id="a-sensitivity-analysis">A. Sensitivity Analysis</h4>
+<ol>
+<li>Navigate to the sensitivity analysis section on the dashboard</li>
+<li>Observe how economics or process flow metrics change across different scenarios</li>
+<li>Identify which inputs have the greatest impact on outcomes</li>
+</ol>
+<h4 id="b-tornado-chart-analysis">B. Tornado Chart Analysis</h4>
+<ol>
+<li>Locate the tornado chart on the dashboard</li>
+<li>Examine which variables create the widest bars (highest impact)</li>
+<li>Focus refinement efforts on high-impact variables</li>
+</ol>
+<details class="example">
+<summary>View Tornado Chart Example</summary>
+<p><img alt="Tornado Chart" src="../../images/tornado_chart.png" /></p>
+</details>
+<h4 id="c-interpret-results">C. Interpret Results</h4>
+<ul>
+<li>Wider bars indicate parameters with higher economic leverage</li>
+<li>Asymmetric bars suggest non-linear relationships</li>
+<li>Direction shows positive or negative correlation with profitability (or whichever metric you've set)</li>
+</ul>
+<h3 id="5-exercise-zero-cost-impact-analysis">5. Exercise: "Zero-Cost" Impact Analysis</h3>
+<p>A valuable exercise is to explore the impact if certain inputs were free:</p>
+<h4 id="a-select-a-key-input-cost">A. Select a key input cost</h4>
+<p>Choose an input with significant cost contribution.</p>
+<h4 id="b-set-the-cost-to-zero-in-the-variable-tab">B. Set the cost to zero in the "variable" tab</h4>
+<p>This simulates a scenario where this input is free or self-generated.</p>
+<h4 id="c-evaluate-impact-on-unit-economics">C. Evaluate impact on unit economics</h4>
+<ol>
+<li>Note the change in total production cost</li>
+<li>Calculate the percentage improvement in economics</li>
+</ol>
+<h4 id="d-analyze-the-waterfall-chart">D. Analyze the waterfall chart</h4>
+<ol>
+<li>Locate the waterfall chart at the bottom of the dashboard</li>
+<li>The segment corresponding to your zeroed input represents its economic impact</li>
+<li>Compare this to other cost components to prioritize cost reduction efforts</li>
+</ol>
+<details class="example">
+<summary>View Waterfall Chart Example</summary>
+<p><img alt="Waterfall Chart" src="../../images/waterfall_chart.png" /></p>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
